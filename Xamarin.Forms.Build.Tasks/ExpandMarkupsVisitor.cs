@@ -165,7 +165,7 @@ namespace Xamarin.Forms.Build.Tasks
 				try
 				{
 					type = new XmlType(namespaceuri, name + "Extension", null);
-					type.GetTypeReference(contextProvider.Context.Body.Method.Module, null);
+					type.GetTypeReference(contextProvider.Context.Module, null);
 				}
 				catch (XamlParseException)
 				{

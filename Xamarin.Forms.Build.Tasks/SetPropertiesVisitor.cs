@@ -685,7 +685,7 @@ namespace Xamarin.Forms.Build.Tasks
 			//			.class nested private auto ansi sealed beforefieldinit '<Main>c__AnonStorey0'
 			//			extends [mscorlib]System.Object
 
-			var module = parentContext.Body.Method.Module;
+			var module = parentContext.Module;
 			var anonType = new TypeDefinition(
 				null,
 				"<" + parentContext.Body.Method.Name + ">_anonXamlCDataTemplate_" + dtcount++,
@@ -721,7 +721,7 @@ namespace Xamarin.Forms.Build.Tasks
 			//Fill the loadTemplate Body
 			var templateIl = loadTemplate.Body.GetILProcessor();
 			templateIl.Emit(OpCodes.Nop);
-			var templateContext = new ILContext(templateIl, loadTemplate.Body, parentValues)
+			var templateContext = new ILContext(templateIl, loadTemplate.Body, module, parentValues)
 			{
 				Root = root
 			};
