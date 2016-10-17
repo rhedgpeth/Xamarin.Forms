@@ -296,7 +296,6 @@ namespace Xamarin.Forms.Build.Tasks
 				rootnode.Accept(new SetFieldVisitor(visitorContext), null);
 				rootnode.Accept(new SetResourcesVisitor(visitorContext), null);
 				rootnode.Accept(new SetPropertiesVisitor(visitorContext, true), null);
-				//rootnode.Accept(new CompileBindingsVisitor(visitorContext, true), null);
 
 				il.Emit(OpCodes.Ret);
 				initComp.Body = body;

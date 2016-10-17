@@ -75,6 +75,7 @@
 			DebugSymbols = "$(DebugSymbols)"
 			Verbosity = "4"
 			KeepXamlResources = "true"
+			OutputGeneratedILAsCode = "true"
 			OptimizeIL = "true" />
 	</Target>
 </Project>

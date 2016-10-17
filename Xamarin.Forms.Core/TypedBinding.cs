@@ -60,8 +60,8 @@ namespace Xamarin.Forms.Internals
 		readonly Func<TSource, TProperty> _getter;
 		readonly Action<TSource, TProperty> _setter;
 		readonly WeakPropertyChangedProxy [] _handlers;
-		public delegate object PartGetter(TSource source);
-		public TypedBinding(Func<TSource, TProperty> getter, Action<TSource, TProperty> setter, Tuple<PartGetter, string> [] handlers)
+		//public delegate object PartGetter(TSource source);
+		public TypedBinding(Func<TSource, TProperty> getter, Action<TSource, TProperty> setter, Tuple<Func<TSource, object>, string> [] handlers)
 		{
 			if (getter == null)
 				throw new ArgumentNullException(nameof(getter));
@@ -120,10 +120,10 @@ namespace Xamarin.Forms.Internals
 
 		internal override BindingBase Clone()
 		{
-			Tuple<PartGetter, string> [] handlers = _handlers == null ? null : new Tuple<PartGetter, string> [_handlers.Length];
+			Tuple<Func<TSource, object>, string> [] handlers = _handlers == null ? null : new Tuple<Func<TSource, object>, string> [_handlers.Length];
 			if (handlers != null) {
 				for (var i = 0; i < _handlers.Length; i++)
-					handlers [i] = new Tuple<PartGetter, string>(_handlers [i].PartGetter, _handlers [i].PropertyName);
+					handlers [i] = new Tuple<Func<TSource, object>, string>(_handlers [i].PartGetter, _handlers [i].PropertyName);
 			}
 			return new TypedBinding<TSource, TProperty>(_getter, _setter, handlers) {
 				Mode = Mode,
@@ -213,7 +213,7 @@ namespace Xamarin.Forms.Internals
 
 		struct WeakPropertyChangedProxy
 		{
-			public PartGetter PartGetter { get; set; }
+			public Func<TSource, object> PartGetter { get; set; }
 			public string PropertyName { get; set; }
 			public WeakReference Part { get; set; }
 			public BindingExpression.WeakPropertyChangedProxy Listener { get; set; }

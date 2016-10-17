@@ -13,7 +13,8 @@ namespace Xamarin.Forms.Build.Tasks
 			XmlName.xKey,
 			XmlName.xTypeArguments,
 			XmlName.xFactoryMethod,
-			XmlName.xName
+			XmlName.xName,
+			XmlName.xDataType
 		};
 
 		public ExpandMarkupsVisitor(ILContext context)

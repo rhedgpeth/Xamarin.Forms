@@ -39,7 +39,7 @@ namespace Xamarin.Forms.Core.UnitTests
 				getter: mvm => mvm.Text,
 				setter: (mvm, s) => mvm.Text = s,
 				handlers: new [] { 
-					new Tuple<TypedBinding<MockViewModel, string>.PartGetter, string> (mvm=>mvm, "Text")
+					new Tuple<Func<MockViewModel, object>, string> (mvm=>mvm, "Text")
 				})
 			{
 				Mode = mode,
@@ -78,9 +78,9 @@ namespace Xamarin.Forms.Core.UnitTests
 			var binding = new TypedBinding<ComplexMockViewModel, string>(
 				cmvm => cmvm.Model.Model.Text,
 				(cmvm, s) => cmvm.Model.Model.Text = s, new [] {
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm, "Model"),
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm.Model, "Model"),
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm.Model.Model, "Text")
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm, "Model"),
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm.Model, "Model"),
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm.Model.Model, "Text")
 				}){Mode = bindingMode};
 
 			var bindable = new MockBindable();
@@ -125,9 +125,9 @@ namespace Xamarin.Forms.Core.UnitTests
 			var binding = new TypedBinding<ComplexMockViewModel, string>(
 				cmvm => cmvm.Model.Model.Text,
 				(cmvm, s) => cmvm.Model.Model.Text = s, new [] {
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm, "Model"),
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm.Model, "Model"),
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm.Model.Model, "Text")
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm, "Model"),
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm.Model, "Model"),
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm.Model.Model, "Text")
 				}){Mode = bindingMode};
 
 			var bindable = new MockBindable();
@@ -172,9 +172,9 @@ namespace Xamarin.Forms.Core.UnitTests
 			var binding = new TypedBinding<ComplexMockViewModel, string>(
 				cmvm => cmvm.Model.Model.Text,
 				(cmvm, s) => cmvm.Model.Model.Text = s, new [] {
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm, "Model"),
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm.Model, "Model"),
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm.Model.Model, "Text")
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm, "Model"),
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm.Model, "Model"),
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm.Model.Model, "Text")
 				}){Mode = bindingMode};
 
 			var bindable = new MockBindable();
@@ -219,9 +219,9 @@ namespace Xamarin.Forms.Core.UnitTests
 			var binding = new TypedBinding<ComplexMockViewModel, string>(
 				cmvm => cmvm.Model.Model.Text,
 				(cmvm, s) => cmvm.Model.Model.Text = s, new [] {
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm, "Model"),
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm.Model, "Model"),
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm.Model.Model, "Text")
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm, "Model"),
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm.Model, "Model"),
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm.Model.Model, "Text")
 				}){Mode = bindingMode};
 
 			var bindable = new MockBindable();
@@ -261,9 +261,9 @@ namespace Xamarin.Forms.Core.UnitTests
 			var binding = new TypedBinding<ComplexMockViewModel, string>(
 				cmvm => cmvm.Model.Model.Text,
 				(cmvm, s) => cmvm.Model.Model.Text = s, new [] {
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm, "Model"),
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm.Model, "Model"),
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm.Model.Model, "Text")
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm, "Model"),
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm.Model, "Model"),
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm.Model.Model, "Text")
 				}){Mode = bindingMode};
 
 			var bindable = new MockBindable();
@@ -310,9 +310,9 @@ namespace Xamarin.Forms.Core.UnitTests
 			var binding = new TypedBinding<ComplexMockViewModel, string>(
 				cmvm => cmvm.Model.Model.Text,
 				(cmvm, s) => cmvm.Model.Model.Text = s, new [] {
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm, "Model"),
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm.Model, "Model"),
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm.Model.Model, "Text")
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm, "Model"),
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm.Model, "Model"),
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm.Model.Model, "Text")
 				}){Mode = bindingMode};
 
 			var bindable = new MockBindable();
@@ -362,9 +362,9 @@ namespace Xamarin.Forms.Core.UnitTests
 			var binding = new TypedBinding<ComplexMockViewModel, string>(
 				cmvm => cmvm.Model.Model[1],
 				(cmvm, s) => cmvm.Model.Model[1] = s, new [] {
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm, "Model"),
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm.Model, "Model"),
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm.Model.Model, "Indexer[1]")
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm, "Model"),
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm.Model, "Model"),
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm.Model.Model, "Indexer[1]")
 				}){Mode = bindingMode};
 
 			var bindable = new MockBindable();
@@ -404,9 +404,9 @@ namespace Xamarin.Forms.Core.UnitTests
 			var binding = new TypedBinding<ComplexMockViewModel, string>(
 				cmvm => cmvm.Model.Model [1],
 				(cmvm, s) => cmvm.Model.Model [1] = s, new [] {
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm, "Model"),
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm.Model, "Model"),
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm.Model.Model, "Indexer[1]")
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm, "Model"),
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm.Model, "Model"),
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm.Model.Model, "Indexer[1]")
 				}){Mode = bindingMode};
 			
 			var bindable = new MockBindable();
@@ -452,9 +452,9 @@ namespace Xamarin.Forms.Core.UnitTests
 			var binding = new TypedBinding<ComplexMockViewModel, string>(
 				cmvm => cmvm.Model.Model [1],
 				(cmvm, s) => cmvm.Model.Model [1] = s, new [] {
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm, "Model"),
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm.Model, "Model"),
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm.Model.Model, "Indexer[1]")
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm, "Model"),
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm.Model, "Model"),
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm.Model.Model, "Indexer[1]")
 				}){Mode = bindingMode};
 
 			var bindable = new MockBindable();
@@ -637,9 +637,9 @@ namespace Xamarin.Forms.Core.UnitTests
 			var binding = new TypedBinding<ComplexMockViewModel, string>(
 				cmvm => cmvm.Model.Model [1],
 				(cmvm, s) => cmvm.Model.Model [1] = s, new [] {
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm, "Model"),
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm.Model, "Model"),
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm.Model.Model, "Indexer[1]")
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm, "Model"),
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm.Model, "Model"),
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm.Model.Model, "Indexer[1]")
 				}){Mode = mode};
 
 			WeakReference weakViewModel = null, weakBindable = null;
@@ -708,7 +708,7 @@ namespace Xamarin.Forms.Core.UnitTests
 				getter: mvm => mvm.Text,
 				setter: (mvm, s) => mvm.Text = s,
 				handlers: new [] {
-					new Tuple<TypedBinding<MockViewModel, string>.PartGetter, string> (mvm=>mvm, "Text")
+					new Tuple<Func<MockViewModel, object>, string> (mvm=>mvm, "Text")
 				}){Converter = converter};
 
 			var bindable = new MockBindable();
@@ -732,7 +732,7 @@ namespace Xamarin.Forms.Core.UnitTests
 				getter: mvm => mvm.Text,
 				setter: (mvm, s) => mvm.Text = s,
 				handlers: new [] {
-					new Tuple<TypedBinding<MockViewModel, string>.PartGetter, string> (mvm=>mvm, "Text")
+					new Tuple<Func<MockViewModel, object>, string> (mvm=>mvm, "Text")
 				}){Converter = converter};
 
 			var bindable = new MockBindable();
@@ -769,7 +769,7 @@ namespace Xamarin.Forms.Core.UnitTests
 				getter: mvm => mvm.Text,
 				setter: (mvm, s) => mvm.Text = s,
 				handlers: new [] {
-					new Tuple<TypedBinding<MockViewModel, string>.PartGetter, string> (mvm=>mvm, "Text")
+					new Tuple<Func<MockViewModel, object>, string> (mvm=>mvm, "Text")
 				}){Converter = converter, ConverterParameter = "Foo"};
 
 			var bindable = new MockBindable();
@@ -807,7 +807,7 @@ namespace Xamarin.Forms.Core.UnitTests
 				getter: mvm => mvm.Text,
 				setter: (mvm, s) => mvm.Text = s,
 				handlers: new [] {
-					new Tuple<TypedBinding<MockViewModel, string>.PartGetter, string> (mvm=>mvm, "Text")
+					new Tuple<Func<MockViewModel, object>, string> (mvm=>mvm, "Text")
 				}){Converter = converter};
 			var bindable = new MockBindable();
 			bindable.SetBinding(property, binding);
@@ -899,10 +899,10 @@ namespace Xamarin.Forms.Core.UnitTests
 
 			var bindable = new MultiplePropertyBindable();
 			var progressBinding = new TypedBinding<MultiplePropertyViewModel, float>(vm => vm.Progress, null, new [] {
-				new Tuple<TypedBinding<MultiplePropertyViewModel, float>.PartGetter, string> (vm=>vm, "Progress"),
+				new Tuple<Func<MultiplePropertyViewModel, object>, string> (vm=>vm, "Progress"),
 			}){Mode = BindingMode.OneWay};
 			var doneBinding = new TypedBinding<MultiplePropertyViewModel, int>(vm => vm.Done, (vm,d)=>vm.Done=d, new [] {
-				new Tuple<TypedBinding<MultiplePropertyViewModel, int>.PartGetter, string> (vm=>vm, "Done"),
+				new Tuple<Func<MultiplePropertyViewModel, object>, string> (vm=>vm, "Done"),
 			}){Mode = BindingMode.OneWayToSource};
 
 			bindable.SetBinding(MultiplePropertyBindable.ValueProperty, progressBinding);
@@ -932,8 +932,8 @@ namespace Xamarin.Forms.Core.UnitTests
 
 			var bindable = new MockBindable();
 			var binding = new TypedBinding<ComplexMockViewModel, string>(cvm => cvm.Model.Text, (cvm, t) => cvm.Model.Text = t, new [] {
-				new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cvm=>cvm, "Model"),
-				new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cvm=>cvm.Model, "Text")
+				new Tuple<Func<ComplexMockViewModel, object>, string>(cvm=>cvm, "Model"),
+				new Tuple<Func<ComplexMockViewModel, object>, string>(cvm=>cvm.Model, "Text")
 			}){Mode = BindingMode.OneWay};
 			bindable.SetBinding(property, binding);
 			bindable.BindingContext = vm;
@@ -957,8 +957,8 @@ namespace Xamarin.Forms.Core.UnitTests
 
 			var property = BindableProperty.Create("Text", typeof(string), typeof(MockBindable), "foo bar");
 			var binding = new TypedBinding<ComplexMockViewModel, string>(cvm => cvm.Model.Text, (cvm, t) => cvm.Model.Text = t, new [] {
-				new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cvm=>cvm, "Model"),
-				new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cvm=>cvm.Model, "Text")
+				new Tuple<Func<ComplexMockViewModel, object>, string>(cvm=>cvm, "Model"),
+				new Tuple<Func<ComplexMockViewModel, object>, string>(cvm=>cvm.Model, "Text")
 			}){Mode = BindingMode.OneWay};
 			var bindable = new MockBindable();
 			bindable.SetBinding(property, binding);
@@ -1033,7 +1033,7 @@ namespace Xamarin.Forms.Core.UnitTests
 			var bindable = new MockBindable();
 			bindable.BindingContext = vm;
 			var binding = new TypedBinding<MockViewModel, string>(mvm => mvm.Text, (mvm, s) => mvm.Text = s, new [] {
-				new Tuple<TypedBinding<MockViewModel, string>.PartGetter, string>(mvm=>mvm, "Text")
+				new Tuple<Func<MockViewModel, object>, string>(mvm=>mvm, "Text")
 			});
 			bindable.SetBinding(MockBindable.TextProperty, binding);
 
@@ -1052,8 +1052,8 @@ namespace Xamarin.Forms.Core.UnitTests
 			var binding = new TypedBinding<ComplexMockViewModel, string>(
 			  cmvm => cmvm.Model.Text,
 			  (cmvm, s) => cmvm.Model.Text = s, new [] {
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm, "Model"),
-					new Tuple<TypedBinding<ComplexMockViewModel, string>.PartGetter, string>(cmvm=>cmvm.Model, "Text"),
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm, "Model"),
+					new Tuple<Func<ComplexMockViewModel, object>, string>(cmvm=>cmvm.Model, "Text"),
 				});
 
 			Assert.That(() => bindable.SetBinding(MockBindable.TextProperty, binding), Throws.Nothing);
@@ -1205,10 +1205,10 @@ namespace Xamarin.Forms.Core.UnitTests
 			var bindable = new MockBindable2();
 			bindable.BindingContext = vm;
 			bindable.SetBinding(MockBindable.TextProperty, new TypedBinding<NullViewModel,string>(nvm => nvm.Foo, null, new [] { 
-				new Tuple<TypedBinding<NullViewModel, string>.PartGetter, string>(nvm=>nvm,"Foo")
+				new Tuple<Func<NullViewModel, object>, string>(nvm=>nvm,"Foo")
 			}));
 			bindable.SetBinding(MockBindable2.Text2Property, new TypedBinding<NullViewModel, string>(nvm => nvm.Bar, null, new [] {
-				new Tuple<TypedBinding<NullViewModel, string>.PartGetter, string>(nvm=>nvm,"Bar")
+				new Tuple<Func<NullViewModel, object>, string>(nvm=>nvm,"Bar")
 			}));
 
 			vm.Foo = "Foo";
@@ -1271,7 +1271,7 @@ namespace Xamarin.Forms.Core.UnitTests
 
 				var button = new Button();
 				button.SetBinding(Button.TextProperty, new TypedBinding<TestViewModel,string>(vm => vm.Foo, (vm, s) => vm.Foo = s, new [] { 
-					new Tuple<TypedBinding<TestViewModel, string>.PartGetter, string>(vm=>vm,"Foo")
+					new Tuple<Func<TestViewModel, object>, string>(vm=>vm,"Foo")
 				}));
 				button.BindingContext = viewmodel;
 			};
@@ -1304,7 +1304,7 @@ namespace Xamarin.Forms.Core.UnitTests
 				}
 
 				var binding = new TypedBinding<TestViewModel, string>(vm => vm.Foo, (vm, s) => vm.Foo = s, new [] {
-					new Tuple<TypedBinding<TestViewModel, string>.PartGetter, string>(vm=>vm,"Foo")
+					new Tuple<Func<TestViewModel, object>, string>(vm=>vm,"Foo")
 				});
 				var button = new Button();
 				button.SetBinding(Button.TextProperty, binding);
@@ -1330,7 +1330,7 @@ namespace Xamarin.Forms.Core.UnitTests
 		{
 			TestViewModel viewmodel = new TestViewModel();
 			var binding = new TypedBinding<TestViewModel, string>(vm => vm.Foo, (vm, s) => vm.Foo = s, new [] {
-					new Tuple<TypedBinding<TestViewModel, string>.PartGetter, string>(vm=>vm,"Foo")
+					new Tuple<Func<TestViewModel, object>, string>(vm=>vm,"Foo")
 				});
 
 			var button = new Button();
@@ -1371,8 +1371,8 @@ namespace Xamarin.Forms.Core.UnitTests
 				vm => vm.Item1["Foo"],
 				(vm, s) => vm.Item1 ["Foo"] = s,
 				new [] {
-					new Tuple<TypedBinding<Tuple<IndexedViewModel, object>, object>.PartGetter, string>(vm=>vm, "Item1"),
-					new Tuple<TypedBinding<Tuple<IndexedViewModel, object>, object>.PartGetter, string>(vm=>vm.Item1, "Item[Foo]"),
+					new Tuple<Func<Tuple<IndexedViewModel, object>, object>, string>(vm=>vm, "Item1"),
+					new Tuple<Func<Tuple<IndexedViewModel, object>, object>, string>(vm=>vm.Item1, "Item[Foo]"),
 				});
 
 			label.BindingContext = new Tuple<IndexedViewModel, object>(viewModel, new object());
