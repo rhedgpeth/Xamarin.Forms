@@ -42,7 +42,7 @@ namespace Xamarin.Forms.Xaml.UnitTests
 		}
 
 		string _text;
-		public virtual string Text {
+		public string Text {
 			get { return _text; }
 			set {
 				if (_text == value)
@@ -50,6 +50,30 @@ namespace Xamarin.Forms.Xaml.UnitTests
 
 				_text = value;
 				OnPropertyChanged();
+			}
+		}
+
+		MockViewModel _model;
+		public MockViewModel Model {
+			get { return _model; }
+			set {
+				if (_model == value)
+					return;
+				_model = value;
+				OnPropertyChanged();
+			}
+		}
+
+		string [] values = new string [5];
+		[IndexerName("Indexer")]
+		public string this [int v] {
+			get { return values [v]; }
+			set {
+				if (values [v] == value)
+					return;
+
+				values [v] = value;
+				OnPropertyChanged("Indexer[" + v + "]");
 			}
 		}
 

@@ -3,8 +3,14 @@
 		xmlns="http://xamarin.com/schemas/2014/forms"
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 		xmlns:local="clr-namespace:Xamarin.Forms.Xaml.UnitTests"
-		x:Class="Xamarin.Forms.Xaml.UnitTests.BindingsCompiler">
-	<ContentPage.Content>
-		<Label Text="{Binding Text}" x:Name="label0" x:DataType="local:MockViewModel"/>
-	</ContentPage.Content>
+		x:Class="Xamarin.Forms.Xaml.UnitTests.BindingsCompiler"
+		x:DataType="local:MockViewModel">
+	<StackLayout>
+		<Label Text="{Binding Text}" x:Name="label0" />
+		<Label Text="{Binding Path=Text}" x:Name="label1" />
+		<Label Text="{Binding Model.Text}" x:Name="label2" />
+		<Label Text="{Binding Model[3]}" x:Name="label3" />
+		<Label Text="{Binding}" x:Name="label4" />
+	
+	</StackLayout>
 </ContentPage>
