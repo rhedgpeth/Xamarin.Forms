@@ -116,7 +116,7 @@ namespace Xamarin.Forms.Platform.Android.AppCompat
 				{
 					_detailLayout = new MasterDetailContainer(newElement, false, Context)
 					{
-						TopPadding = statusBarHeight,
+						TopPadding = Element.Parent is NavigationPage ? 0 : statusBarHeight,
 						LayoutParameters = new LayoutParams(ViewGroup.LayoutParams.WrapContent, ViewGroup.LayoutParams.WrapContent)
 					};
 
