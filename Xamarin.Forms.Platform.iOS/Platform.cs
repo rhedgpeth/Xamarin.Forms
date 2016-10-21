@@ -48,6 +48,10 @@ namespace Xamarin.Forms.Platform.iOS
 
 				if (Forms.IsiOS8OrNewer)
 				{
+					var window = new UIWindow { BackgroundColor = Color.Transparent.ToUIColor() };
+					window.RootViewController = new UIViewController();
+					window.MakeKeyAndVisible();
+
 					var alert = UIAlertController.Create(arguments.Title, arguments.Message, UIAlertControllerStyle.Alert);
 					var oldFrame = alert.View.Frame;
 					alert.View.Frame = new RectangleF(oldFrame.X, oldFrame.Y, oldFrame.Width, oldFrame.Height - _alertPadding * 2);
@@ -56,7 +60,8 @@ namespace Xamarin.Forms.Platform.iOS
 						alert.AddAction(UIAlertAction.Create(arguments.Accept, UIAlertActionStyle.Default, a => arguments.SetResult(true)));
 					var page = _modals.Any() ? _modals.Last() : Page;
 					var vc = GetRenderer(page).ViewController;
-					vc.PresentViewController(alert, true, null);
+
+					window.RootViewController.PresentViewController(alert, true, null);
 				}
 				else
 				{
